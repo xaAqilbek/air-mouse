@@ -1,6 +1,7 @@
 import math
 import os
 import time
+import keyboard
 
 import cv2
 import mediapipe as mp
@@ -91,6 +92,8 @@ try:
 
         cv2.imshow("Air Mouse", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        if keyboard.is_pressed('esc'):   # Esc останавливает программу из любого окна
             break
 
 except pyautogui.FailSafeException:
